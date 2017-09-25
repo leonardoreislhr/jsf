@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml" 
+   xmlns:h = "http://java.sun.com/jsf/html">
+<h:head>
+	<h:title>Insert title here</h:title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<i>Ola galera</i>
+		<strong>Ola galera</strong>
+		<h:inputText name= "primeiroCampo" id="primeiroCampo" 
+			value="Ola mundo"/>
+		<h:commandButton name="btnPrimeiro" id="btnPrimeiro"
+			value="Meu Primeiro Botao"/>
+		<h:inputTextarea name="txtArea" id="txtArea" 
+			cols="20" rows="30" />
+		<br/>
+		<br/>
+		<h:commandButton id="btnAlfredo"
+		value="Mostre mais dados do alfredo"
+		action="#{alfredoController.exibirDadosAlfredo()}"
+		/>
+	<br/>
+	<h:outputLabel value="Nome: #{alfredoController.nome}" />
+	<br/>
+	<h:outputLabel value="Idade: #{alfredoController.idade}" />
+	</h:form>
+</h:body>
+
+</html>
