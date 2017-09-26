@@ -8,28 +8,29 @@ import javax.faces.model.SelectItem;
 
 @ManagedBean
 public class Exercicios {
-	
+
 	private Integer valor1;
 	private Integer valor2;
 	private Integer resposta;
 	private String resposta2;
 	private String palavra;
-	private String estadosSul;
-	
-	public String getEstadosSul() {
-		return estadosSul;
+	private Uf uf = Uf.RS;
+	private Sexo sexo;
+
+	public Sexo getSexo() {
+		return sexo;
 	}
 
-	public void setEstadosSul(String estadosSul) {
-		this.estadosSul = estadosSul;
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
 	}
 
-	public Integer exibirResposta(){
-		return resposta;
+	public Uf getUf() {
+		return uf;
 	}
-	
-	public String exibirResposta2() {
-		return resposta2;
+
+	public void setUf(Uf uf) {
+		this.uf = uf;
 	}
 
 	public Integer getValor1() {
@@ -55,7 +56,7 @@ public class Exercicios {
 	public void setResposta(Integer resposta) {
 		this.resposta = resposta;
 	}
-	
+
 	public String getPalavra() {
 		return palavra;
 	}
@@ -67,35 +68,47 @@ public class Exercicios {
 	public void exibirSoma() {
 		resposta = valor1 + valor2;
 	}
-	
+
 	public void exibirSubtracao() {
 		resposta = valor1 - valor2;
 	}
-	
+
 	public void exibirDivisao() {
 		resposta = valor1 / valor2;
 	}
-	
+
 	public void exibirMultiplicacao() {
 		resposta = valor1 * valor2;
 	}
-	
+
 	public void letrasMinusculas() {
 		resposta2 = palavra.toLowerCase();
 	}
-	
+
 	public void letrasMaiusculas() {
 		resposta2 = palavra.toUpperCase();
 	}
-	
-	public List<SelectItem> estadosSul() {
-	    List<SelectItem> estados = new ArrayList<SelectItem>();
-	    estados.add(new SelectItem("PARANÁ"));
-	    estados.add(new SelectItem("SANTA_CATARINA"));
-	    estados.add(new SelectItem("RIO_GRANDE_DO_SUL"));
-	    return estados;
+
+	/*
+	 * public List<SelectItem> estadosSul() { List<SelectItem> estados = new
+	 * ArrayList<SelectItem>(); estados.add(new SelectItem("PARANÁ"));
+	 * estados.add(new SelectItem("SANTA_CATARINA")); estados.add(new
+	 * SelectItem("RIO_GRANDE_DO_SUL")); return estados; }
+	 */
+
+	public Integer exibirResposta() {
+		return resposta;
+	}
+
+	public String exibirResposta2() {
+		return resposta2;
 	}
 	
-	
-	
+	public Uf[] getListaUf() {
+		return uf.values();
+	}
+
+	public Sexo[] getListaSexo() {
+		return sexo.values();
+	}
 }

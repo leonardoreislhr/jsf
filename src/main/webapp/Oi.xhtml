@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core" 
+	lang="en">
 <h:head>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<h:title>Insert title here</h:title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+		integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+		crossorigin="anonymous" />
 </h:head>
 
 <h:body>
@@ -12,14 +20,16 @@
 		<strong>Ola galera</strong>
 		<h:inputText name="primeiroCampo" id="primeiroCampo" value="Ola mundo" />
 		<h:commandButton name="btnPrimeiro" id="btnPrimeiro"
-			value="Meu Primeiro Botao" />
-		<h:inputTextarea name="txtArea" id="txtArea" cols="20" rows="30" />
+			value="Meu Primeiro Botao" class="btn btn-outline-danger" />
+		<!-- <h:inputTextarea name="txtArea" id="txtArea" cols="20" rows="30" />
+		-->
 		<br />
 		<br />
 
 
 		<h:commandButton id="btnAlfredo" value="Mostre mais dados do alfredo"
-			action="#{alfredoController.exibirDadosAlfredo()}" />
+			action="#{alfredoController.exibirDadosAlfredo()}"
+			class="btn btn-outline-primary" />
 		<br />
 		<h:outputLabel value="Nome: #{alfredoController.nome}" />
 		<br />
@@ -27,20 +37,26 @@
 
 
 		<br />
+		<br />
+		<i>Operações matemáticas</i>
+		<br />
 		<h:inputText name="somar" id="somar" value="#{exercicios.valor1}" />
 		<h:inputText name="somar1" id="somar1" value="#{exercicios.valor2}" />
 		<br />
 		<h:commandButton id="btnSomar" value="Somar"
-			action="#{exercicios.exibirSoma()}" />
+			action="#{exercicios.exibirSoma()}" class="btn btn-outline-success" />
 		<br />
 		<h:commandButton id="btnSubtrair" value="Subtrair"
-			action="#{exercicios.exibirSubtracao()}" />
+			action="#{exercicios.exibirSubtracao()}"
+			class="btn btn-outline-success" />
 		<br />
 		<h:commandButton id="btnDividir" value="Dividir"
-			action="#{exercicios.exibirDivisao()}" />
+			action="#{exercicios.exibirDivisao()}"
+			class="btn btn-outline-success" />
 		<br />
 		<h:commandButton id="btnMultiplicar" value="Multiplcar"
-			action="#{exercicios.exibirMultiplicacao()}" />
+			action="#{exercicios.exibirMultiplicacao()}"
+			class="btn btn-outline-success" />
 		<br />
 		<h:outputLabel value="Resposta: #{exercicios.exibirResposta()}" />
 
@@ -50,10 +66,12 @@
 		<h:inputText name="palavra" id="palavra" value="#{exercicios.palavra}" />
 		<br />
 		<h:commandButton id="btnMaiuscula" value="Maiuscula"
-			action="#{exercicios.letrasMaiusculas()}" />
+			action="#{exercicios.letrasMaiusculas()}"
+			class="btn btn-outline-dark" />
 		<br />
 		<h:commandButton id="btnMinuscula" value="Minuscula"
-			action="#{exercicios.letrasMinusculas()}" />
+			action="#{exercicios.letrasMinusculas()}"
+			class="btn btn-outline-dark" />
 		<br />
 		<h:outputText value="Resultado: #{exercicios.exibirResposta2()}" />
 
@@ -72,14 +90,38 @@
 
 		<br />
 		<br />
-		<i>Selecione a região:</i>
-		<br />
-		<h:selectOneMenu value="#{exercicios.estadosSul()}">
-			<f:selectItem itemValue="PARANÁ" itemLabel="PR" />
-			<f:selectItem itemValue="SANTA_CATARINA" itemLabel="SC" />
-			<f:selectItem itemValue="RIO_GRANDE_DO_SUL" itemLabel="RS" />
+		<h:outputLabel value="Estados do Sul do Brasil" />
+		<h:selectOneMenu id="estadosSul" value="#{exercicios.uf}">
+			<f:selectItems value="#{exercicios.listaUf}" />
 		</h:selectOneMenu>
+		
+		
+		<br />
+		<br />
+		<h:outputLabel value="Sexo" />
+		<h:selectOneMenu id="Sexo" value="#{exercicios.sexo}">
+			<f:selectItems value="#{exercicios.listaSexo}" />
+		</h:selectOneMenu>
+		
+		
+		<br/>
+		<br/>
+		<h:selectOneRadio>
+			<f:selectItems value="#{exercicios.listaSexo}"/>
+		</h:selectOneRadio>
+		
 	</h:form>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+		integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+		integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+		crossorigin="anonymous"></script>
 </h:body>
 
 </html>
