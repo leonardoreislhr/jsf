@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html xmlns = "http://www.w3.org/1999/xhtml" 
-   xmlns:h = "http://java.sun.com/jsf/html">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
 	<h:title>Insert title here</h:title>
 </h:head>
@@ -9,22 +10,75 @@
 	<h:form>
 		<i>Ola galera</i>
 		<strong>Ola galera</strong>
-		<h:inputText name= "primeiroCampo" id="primeiroCampo" 
-			value="Ola mundo"/>
+		<h:inputText name="primeiroCampo" id="primeiroCampo" value="Ola mundo" />
 		<h:commandButton name="btnPrimeiro" id="btnPrimeiro"
-			value="Meu Primeiro Botao"/>
-		<h:inputTextarea name="txtArea" id="txtArea" 
-			cols="20" rows="30" />
-		<br/>
-		<br/>
-		<h:commandButton id="btnAlfredo"
-		value="Mostre mais dados do alfredo"
-		action="#{alfredoController.exibirDadosAlfredo()}"
-		/>
-	<br/>
-	<h:outputLabel value="Nome: #{alfredoController.nome}" />
-	<br/>
-	<h:outputLabel value="Idade: #{alfredoController.idade}" />
+			value="Meu Primeiro Botao" />
+		<h:inputTextarea name="txtArea" id="txtArea" cols="20" rows="30" />
+		<br />
+		<br />
+
+
+		<h:commandButton id="btnAlfredo" value="Mostre mais dados do alfredo"
+			action="#{alfredoController.exibirDadosAlfredo()}" />
+		<br />
+		<h:outputLabel value="Nome: #{alfredoController.nome}" />
+		<br />
+		<h:outputLabel value="Idade: #{alfredoController.idade}" />
+
+
+		<br />
+		<h:inputText name="somar" id="somar" value="#{exercicios.valor1}" />
+		<h:inputText name="somar1" id="somar1" value="#{exercicios.valor2}" />
+		<br />
+		<h:commandButton id="btnSomar" value="Somar"
+			action="#{exercicios.exibirSoma()}" />
+		<br />
+		<h:commandButton id="btnSubtrair" value="Subtrair"
+			action="#{exercicios.exibirSubtracao()}" />
+		<br />
+		<h:commandButton id="btnDividir" value="Dividir"
+			action="#{exercicios.exibirDivisao()}" />
+		<br />
+		<h:commandButton id="btnMultiplicar" value="Multiplcar"
+			action="#{exercicios.exibirMultiplicacao()}" />
+		<br />
+		<h:outputLabel value="Resposta: #{exercicios.exibirResposta()}" />
+
+
+		<br />
+		<br />
+		<h:inputText name="palavra" id="palavra" value="#{exercicios.palavra}" />
+		<br />
+		<h:commandButton id="btnMaiuscula" value="Maiuscula"
+			action="#{exercicios.letrasMaiusculas()}" />
+		<br />
+		<h:commandButton id="btnMinuscula" value="Minuscula"
+			action="#{exercicios.letrasMinusculas()}" />
+		<br />
+		<h:outputText value="Resultado: #{exercicios.exibirResposta2()}" />
+
+
+		<br />
+		<br />
+		<i>Você gostaria de entrar na DB1?</i>
+		<br />
+		<b>SIM</b>
+		<h:selectBooleanCheckbox />
+		<b>NÃO</b>
+		<h:selectBooleanCheckbox />
+		<b>TALVEZ</b>
+		<h:selectBooleanCheckbox />
+
+
+		<br />
+		<br />
+		<i>Selecione a região:</i>
+		<br />
+		<h:selectOneMenu value="#{exercicios.estadosSul()}">
+			<f:selectItem itemValue="PARANÁ" itemLabel="PR" />
+			<f:selectItem itemValue="SANTA_CATARINA" itemLabel="SC" />
+			<f:selectItem itemValue="RIO_GRANDE_DO_SUL" itemLabel="RS" />
+		</h:selectOneMenu>
 	</h:form>
 </h:body>
 
